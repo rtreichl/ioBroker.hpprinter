@@ -1,0 +1,39 @@
+{
+    "cli": true,
+    "adapterName": "hpprinter",
+    "title": "HP-Printer",
+    "keywords": [
+        "printer",
+        "hp"
+    ],
+    "expert": "no",
+    "features": [
+        "adapter",
+        "vis"
+    ],
+    "adminFeatures": [],
+    "type": "infrastructure",
+    "startMode": "daemon",
+    "connectionType": "local",
+    "dataSource": "poll",
+    "connectionIndicator": "no",
+    "language": "JavaScript",
+    "adminReact": "no",
+    "tools": [
+        "ESLint",
+        "type checking",
+        "devcontainer"
+    ],
+    "indentation": "Space (4)",
+    "quotes": "double",
+    "es6class": "yes",
+    "authorName": "Richard",
+    "authorGithub": "rtreichl",
+    "authorEmail": "r.treichl@gmail.com",
+    "gitRemoteProtocol": "HTTPS",
+    "gitCommit": "no",
+    "license": "MIT License",
+    "ci": "gh-actions",
+    "dependabot": "no",
+    "creatorVersion": "1.31.0"
+}

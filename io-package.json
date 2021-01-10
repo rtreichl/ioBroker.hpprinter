@@ -1,0 +1,82 @@
+{
+    "common": {
+        "name": "hpprinter",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "HP-Printer",
+        "titleLang": {
+            "en": "HP-Printer",
+            "de": "HP-Drucker",
+            "ru": "HP-принтер",
+            "pt": "Impressora HP",
+            "nl": "HP-printer",
+            "fr": "Imprimante HP",
+            "it": "Stampante HP",
+            "es": "Impresora HP",
+            "pl": "Drukarka HP",
+            "zh-cn": "惠普打印机"
+        },
+        "desc": {
+            "en": "hpprinter",
+            "de": "hpprinter",
+            "ru": "принтер",
+            "pt": "hpprinter",
+            "nl": "hpprinter",
+            "fr": "hpprinter",
+            "it": "hpprinter",
+            "es": "hpprinter",
+            "pl": "hpprinter",
+            "zh-cn": "hpprinter"
+        },
+        "authors": [
+            "Richard <r.treichl@gmail.com>"
+        ],
+        "keywords": [
+            "printer",
+            "hp"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "hpprinter.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/rtreichl/ioBroker.hpprinter/master/admin/hpprinter.png",
+        "readme": "https://github.com/rtreichl/ioBroker.hpprinter/blob/master/README.md",
+        "loglevel": "info",
+        "restartAdapters": [
+            "vis"
+        ],
+        "localLink": "%web_protocol%://%ip%:%web_port%/vis/edit.html",
+        "mode": "daemon",
+        "type": "infrastructure",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            },
+            "vis"
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": []
+}
