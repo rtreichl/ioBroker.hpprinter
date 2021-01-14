@@ -47,18 +47,25 @@ vis.binds["hpprinter"] = {
         }
 
         var text = "";
-        text += "OID: " + data.oid + "</div><br>";
-        text += 'OID value: <span class="hpprinter-value">' + vis.states[data.oid + ".val"] + "</span><br>";
-        text += 'Color: <span style="color: ' + data.myColor + '">' + data.myColor + "</span><br>";
-        text += "extraAttr: " + data.extraAttr + "<br>";
-        text += "Browser instance: " + vis.instance + "<br>";
-        text += 'htmlText: <textarea readonly style="width:100%">' + (data.htmlText || "") + "</textarea><br>";
+        text += '<div class="hpprinter-cartridge-class" style="position:relative; width:100px; height:100px; width:100px; height:100px;">';
+        text += '<img style="position: relative; z-index: 2; width:100px; height:100px;" src="widgets/hpprinter/img/cartridge.png" />';
+        text += '<div class="hpprinter-fuel-class" style="position: absolute; z-index: 1; left: 0; top: 0; width: 40px; height: 59px; margin-left: 25px; margin-top: 20px;">';
+        text += '</div></div>';
 
         $("#" + widgetID).html(text);
 
+        var test = $("#" + widgetID).find(".hpprinter-fuel-class");
+
+        var gradient = "linear-gradient(0deg, " + data.myColor + " " + vis.states[data.attr('oid') + '.val'] + "%, dimgray " + vis.states[data.attr('oid') + '.val'] + "%)";
+
+        test.css({"background": gradient});
+
         // subscribe on updates of value
         function onChange(e, newVal, oldVal) {
-            $div.find(".template-value").html(newVal);
+            var test = $div.find(".hpprinter-fuel-class").css("background");
+            test = test.replace(oldVal + "%,", newVal + "%,");
+            test = test.replace(oldVal + "%)", newVal + "%)");
+            $div.find(".hpprinter-fuel-class").css({"background": test});
         }
         if (data.oid) {
             vis.states.bind(data.oid + ".val", onChange);
@@ -67,6 +74,8 @@ vis.binds["hpprinter"] = {
             //remember onchange handler to release bound states
             $div.data("bindHandler", onChange);
         }
+
+        vis.states.bind(data.oid + 'val', onChange);
     }
 };
 

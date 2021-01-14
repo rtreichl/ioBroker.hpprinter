@@ -108,14 +108,13 @@
         data-vis-set="hpprinter"
         data-vis-type="helper"
         data-vis-name="Show instance">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="width:230px; height:210px;" id="<%= this.data.attr('wid') %>" >
+    <div class="vis-widget <%== this.data.attr('class') %>" style="width:100px; height:100px;" id="<%= this.data.attr('wid') %>" >
         <div class="hpprinter-class vis-widget-body <%== this.data.attr('class') %>" style="padding:2px" >
-            OID: <%= this.data.attr('oid') %><br>
-            OID value: <%== vis.states[this.data.attr('oid') + '.val'] %><br>
-            Color: <span style="color: <%= this.data.attr('myColor') %>"><%= this.data.attr('myColor') %></span><br>
-            extraAttr: <%== this.data.attr('extraAttr') %><br>
-            Browser instance: <%= vis.instance %><br>
-            htmlText: <textarea readonly style="width: calc(100% - 10px)"><%== this.data.attr('htmlText') %></textarea><br>
+            <div class="hpprinter-cartridge-class <%== this.data.attr('class') %>" style="position:relative; width:100px; height:100px; width:100px; height:100px;"> 
+                <img style="position: relative; z-index: 2; width:100px; height:100px;" src="widgets/hpprinter/img/cartridge.png" />
+                <div class="hpprinter-fuel-class <%== this.data.attr('class') %>" style="position: absolute; z-index: 1; left: 0; top: 0; width:100px; height:100px;" <%= (el) -> el.css({"background": "linear-gradient(0deg, cyan " + vis.states[this.data.attr('oid') + '.val'] + "%, gray " + vis.states[this.data.attr('oid') + '.val'] + "%)"}) %>>
+                </div>
+            </div>
         </div>
     </div>
 </script>
@@ -129,7 +128,7 @@
         data-vis-set="hpprinter"
         data-vis-type="helper"
         data-vis-name="Helper">
-    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 230px; height: 210px" id="<%= this.data.attr('wid') %>"><%
+    <div class="vis-widget <%== this.data.attr('class') %>" style="overflow:visible; width: 100px; height: 100px" id="<%= this.data.attr('wid') %>"><%
         vis.binds['hpprinter'].createWidget(this.data.wid, this.view, this.data, this.style);
     %></div>
 </script>

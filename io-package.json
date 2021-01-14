@@ -1,8 +1,32 @@
 {
     "common": {
         "name": "hpprinter",
-        "version": "0.0.1",
+        "version": "0.0.3",
         "news": {
+            "0.0.3": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            },
+            "0.0.2": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            },
             "0.0.1": {
                 "en": "initial release",
                 "de": "Erstveröffentlichung",
@@ -74,9 +98,65 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
+        "ipaddr": ""
     },
     "objects": [],
-    "instanceObjects": []
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Device information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.ip",
+            "type": "state",
+            "common": {
+                "name": "Printer IP adress",
+                "role": "info.ip",
+                "type": "string",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.model",
+            "type": "state",
+            "common": {
+                "name": "Printer model type",
+                "role": "info.name",
+                "type": "string",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.cartridgeseries",
+            "type": "state",
+            "common": {
+                "name": "Printer cartridge series",
+                "role": "info.cartridgeseries",
+                "type": "string",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "name": "Printer is online/reachable",
+                "role": "indicator.connected",
+                "type": "boolean",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        }
+    ]
 }
